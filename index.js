@@ -13,7 +13,10 @@ const orderRoutes = require("./routes/orderRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://cand-c-saa-s-frontend.vercel.app"
+}));
+
 app.use(express.json());
 
 // Routes
@@ -38,4 +41,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}...`);
+
 });
